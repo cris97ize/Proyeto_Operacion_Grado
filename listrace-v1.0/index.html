@@ -2,59 +2,19 @@
 <html class="no-js" lang="en">
 
     <head>
-		<style>
-			/* Estilos para la nueva sección del formulario */
-			#form-section {
-				background-color: #f9f9f9;
-				padding: 20px;
-				border-radius: 10px;
-				margin-top: 20px;
-				box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+		<script>
+			function showForm(method) {
+			  const variablesInput = document.getElementById('variables');
+			  if (method === 'grafico') {
+				variablesInput.value = 2;
+				variablesInput.setAttribute('readonly', true);
+			  } else if (method === 'dosFases') {
+				variablesInput.value = '';
+				variablesInput.removeAttribute('readonly');
+			  }
 			}
-	
-			#form-section h2 {
-				margin-bottom: 20px;
-			}
-	
-			#form-section form {
-				display: flex;
-				flex-direction: column;
-				align-items: flex-start;
-			}
-	
-			#form-section label {
-				font-weight: bold;
-				margin-bottom: 5px;
-			}
-	
-			#form-section input[type="number"] {
-				width: 100%;
-				padding: 10px;
-				margin-bottom: 10px;
-				border: 1px solid #ccc;
-				border-radius: 5px;
-			}
-	
-			#form-section button {
-				padding: 10px 20px;
-				background-color: #007bff;
-				color: #fff;
-				border: none;
-				border-radius: 5px;
-				cursor: pointer;
-				transition: background-color 0.3s;
-			}
-	
-			#form-section button:hover {
-				background-color: #0056b3;
-			}
-	
-			/* Estilos para ocultar la sección del formulario al principio */
-			.hidden {
-				display: none;
-			}
-		</style>
-		
+		  </script>
+
         <!-- meta data -->
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -179,73 +139,48 @@
 		<!--list-topics start -->
 		<section id="list-topics" class="list-topics">
 			<div class="container">
-				<div class="list-topics-content">
-					<ul>
-					
-						<li>
-							<div class="single-list-topics-content" onclick="showForm('grafico')">
-								<div class="single-list-topics-icon">
-									<svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" fill="currentColor" class="bi bi-easel2" viewBox="0 0 16 16" onclick="showForm('grafico')">
-										<path fill-rule="evenodd" d="M8 0a.5.5 0 0 1 .447.276L8.81 1h4.69A1.5 1.5 0 0 1 15 2.5V11h.5a.5.5 0 0 1 0 1h-2.86l.845 3.379a.5.5 0 0 1-.97.242L12.11 14H3.89l-.405 1.621a.5.5 0 0 1-.97-.242L3.36 12H.5a.5.5 0 0 1 0-1H1V2.5A1.5 1.5 0 0 1 2.5 1h4.691l.362-.724A.5.5 0 0 1 8 0M2 11h12V2.5a.5.5 0 0 0-.5-.5h-11a.5.5 0 0 0-.5.5zm9.61 1H4.39l-.25 1h7.72z"/>
-									</svg>
-								</div>
-								<h2><a href="#" >Grafico</a></h2>
-							</div>
-						</li>
-				
-						<li>
-							<div class="single-list-topics-content">
-								<div class="single-list-topics-icon">
-									<svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" fill="currentColor" class="bi bi-chevron-double-right" viewBox="0 0 16 16">
-										<path fill-rule="evenodd" d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708"/>
-										<path fill-rule="evenodd" d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708"/>
-									  </svg>
-								</div>
-								<h2><a href="#">Dos Fases</a></h2>
-							</div>
-						</li>
-					
-					</ul>
-				</div>
-			</div><!--/.container-->
-
-		</section><!--/.list-topics-->
-		<!--list-topics end-->
-
-
-
-		<section id="form-section" class="hidden">
-			<div class="container">
-				<h2>Método Gráfico</h2>
-				<form>
-					<div>
-						<label for="num-variables">Número de variables:</label>
-						<input type="number" id="num-variables" name="num-variables" value="2" readonly>
+			  <div class="list-topics-content">
+				<ul>
+				  <li>
+					<div class="single-list-topics-content" onclick="showForm('grafico')">
+					  <div class="single-list-topics-icon">
+						<svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" fill="currentColor" class="bi bi-easel2" viewBox="0 0 16 16">
+						  <path fill-rule="evenodd" d="M8 0a.5.5 0 0 1 .447.276L8.81 1h4.69A1.5.5 0 0 1 15 2.5V11h.5a.5.5 0 0 1 0 1h-2.86l.845 3.379a.5.5 0 0 1-.97.242L12.11 14H3.89l-.405 1.621a.5.5 0 0 1-.97-.242L3.36 12H.5a.5.5 0 0 1 0-1H1V2.5A1.5.5 0 0 1 2.5 1h4.691l.362-.724A.5.5 0 0 1 8 0M2 11h12V2.5a.5.5 0 0 0-.5-.5h-11a.5.5 0 0 0-.5.5zm9.61 1H4.39l-.25 1h7.72z"/>
+						</svg>
+					  </div>
+					  <h2><a href="#" >Grafico</a></h2>
 					</div>
-					<div>
-						<label for="num-restricciones">Número de restricciones:</label>
-						<input type="number" id="num-restricciones" name="num-restricciones">
+				  </li>
+				  <li>
+					<div class="single-list-topics-content" onclick="showForm('dosFases')">
+					  <div class="single-list-topics-icon">
+						<svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" fill="currentColor" class="bi bi-chevron-double-right" viewBox="0 0 16 16">
+						  <path fill-rule="evenodd" d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708"/>
+						  <path fill-rule="evenodd" d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708"/>
+						</svg>
+					  </div>
+					  <h2><a href="#">Dos Fases</a></h2>
 					</div>
-					<div>
-						<button type="submit">Enviar</button>
-					</div>
-				</form>
+				  </li>
+				</ul>
+			  </div>
 			</div>
-		</section>
-	
-		<script>
-			function showForm(topic) {
-				if (topic === 'grafico') {
-					const formSection = document.getElementById('form-section');
-					formSection.classList.remove('hidden');
-					formSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
-					document.getElementById('num-restricciones').focus();
-				}
-			}
-		</script>
-
-
-
+		  </section>
+		
+		  <div class="mb-3 row justify-content-center">
+			<label for="num-decision" class="col-sm-auto col-form-label text-end">Número de Variables de Decisión:</label>
+			<div class="col-auto">
+			  <input type="number" class="form-control" id="variables" name="variables" style="width: 90px" required />
+			</div>
+		  </div>
+		
+		  <div class="mb-3 row justify-content-center">
+			<label for="num-restricciones" class="col-sm-auto col-form-label text-end">Número de Restricciones:</label>
+			<div class="col-auto">
+			  <input type="number" class="form-control" id="restrictions" name="restrictions" style="width: 90px" required />
+			</div>
+		  </div>
+		<!--list-topics end-->
 
 		<!--works start -->
 		<section id="works" class="works">
