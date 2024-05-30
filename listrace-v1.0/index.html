@@ -5,12 +5,16 @@
 		<script>
 			function showForm(method) {
 			  const variablesInput = document.getElementById('variables');
+			  const titleElement = document.getElementById('dynamic-title');
+		
 			  if (method === 'grafico') {
 				variablesInput.value = 2;
 				variablesInput.setAttribute('readonly', true);
+				titleElement.textContent = 'Método Gráfico';
 			  } else if (method === 'dosFases') {
 				variablesInput.value = '';
 				variablesInput.removeAttribute('readonly');
+				titleElement.textContent = 'Dos Fases';
 			  }
 			}
 		  </script>
@@ -166,8 +170,18 @@
 			  </div>
 			</div>
 		  </section>
+
 		
+		<center>
+
+			
 		  <div class="mb-3 row justify-content-center">
+			
+			<div class="container">
+				<div class="section-header">
+					<h2 id="dynamic-title">Proyecto Grafico</h2>
+					
+				</div>
 			<label for="num-decision" class="col-sm-auto col-form-label text-end">Número de Variables de Decisión:</label>
 			<div class="col-auto">
 			  <input type="number" class="form-control" id="variables" name="variables" style="width: 90px" required />
@@ -175,67 +189,95 @@
 		  </div>
 		
 		  <div class="mb-3 row justify-content-center">
+			
 			<label for="num-restricciones" class="col-sm-auto col-form-label text-end">Número de Restricciones:</label>
 			<div class="col-auto">
 			  <input type="number" class="form-control" id="restrictions" name="restrictions" style="width: 90px" required />
 			</div>
 		  </div>
+
+		  <div class="mb-3 row justify-content-center">
+			<button type="button" class="btn" onclick="checkForm()">
+			  Proyectar
+			</button>
+		  </div>
+		</div>
+		<div class="d-flex justify-content-center px-5">
+		  <hr class="w-100" />
+		</div>
+
+		</center>
 		<!--list-topics end-->
 
 		<!--works start -->
-		<section id="works" class="works">
-			<div class="container">
-				<div class="section-header">
-					<h2>how it works</h2>
-					<p>Learn More about how our website works</p>
-				</div><!--/.section-header-->
-				<div class="works-content">
-					<div class="row">
-						<div class="col-md-4 col-sm-6">
-							<div class="single-how-works">
-								<div class="single-how-works-icon">
-									<i class="flaticon-lightbulb-idea"></i>
-								</div>
-								<h2><a href="#">choose <span> what to</span> do</a></h2>
-								<p>
-									Lorem ipsum dolor sit amet, consecte adipisicing elit, sed do eiusmod tempor incididunt ut laboremagna aliqua. 
-								</p>
-								<button class="welcome-hero-btn how-work-btn" onclick="window.location.href='#'">
-									read more
-								</button>
-							</div>
-						</div>
-						<div class="col-md-4 col-sm-6">
-							<div class="single-how-works">
-								<div class="single-how-works-icon">
-									<i class="flaticon-networking"></i>
-								</div>
-								<h2><a href="#">find <span> what you want</span></a></h2>
-								<p>
-									Lorem ipsum dolor sit amet, consecte adipisicing elit, sed do eiusmod tempor incididunt ut laboremagna aliqua. 
-								</p>
-								<button class="welcome-hero-btn how-work-btn" onclick="window.location.href='#'">
-									read more
-								</button>
-							</div>
-						</div>
-						<div class="col-md-4 col-sm-6">
-							<div class="single-how-works">
-								<div class="single-how-works-icon">
-									<i class="flaticon-location-on-road"></i>
-								</div>
-								<h2><a href="#">explore <span> amazing</span> place</a></h2>
-								<p>
-									Lorem ipsum dolor sit amet, consecte adipisicing elit, sed do eiusmod tempor incididunt ut laboremagna aliqua. 
-								</p>
-								<button class="welcome-hero-btn how-work-btn" onclick="window.location.href='#'">
-									read more
-								</button>
-							</div>
-						</div>
+		
+			<form id="target-form" style="display: none">
+				<div class="container p-0 parameters-container">
+				  <div class="mb-3 row d-flex justify-content-center">
+					<label for="objetivo" class="col-sm-auto col-form-label text-end"
+					  >Objetivo:</label
+					>
+					<div class="col-auto">
+					  <select
+						class="form-select"
+						id="natureSystem"
+						style="max-width: 200px"
+					  >
+						<option value="0">Minimizar</option>
+						<option value="1">Maximizar</option>
+					  </select>
 					</div>
+				  </div>
+		  
+				  <div class="row justify-content-center pt-2">
+					<div class="target-container">
+					  <div
+						id="target-variables"
+						class="mb-3 row elastic-row elastic-group-row flex-nowrap"
+					  >
+						<div class="col-auto">
+						  <label for="funcion" class="col-sm-auto col-form-label text-end"
+							>Función:</label
+						  >
+						</div>
+					  </div>
+					  <div class="mb-3 row justify-content-center">
+						<div class="col-auto py-0 px-2">
+						  <label
+							for="funcion"
+							class="col-sm-auto col-form-label text-end"
+							style="font-size: 16px"
+							>Restricciones:</label
+						  >
+						</div>
+					  </div>
+					  <div id="target-restrictions" class="elastic-group-row"></div>
+					  <div class="mb-3 row justify-content-center">
+						<div class="col-auto py-0 px-2">
+						  <label
+							id="variable-label"
+							for="funcion"
+							class="col-sm-auto col-form-label text-end"
+						  ></label>
+						</div>
+					  </div>
+					</div>
+				  </div>
+				  <div class="mb-3 row justify-content-center">
+					<button
+					  id="calculateButton"
+					  type="button"
+					  class="btn"
+					  onclick="calculate()"
+					>
+					  Calcular
+					</button>
+				  </div>
 				</div>
-			</div><!--/.container-->
+				<div class="d-flex justify-content-center px-5">
+					<hr class="w-100" />
+				  </div>
+				</form>
 		
 		</section><!--/.works-->
 		<!--works end -->
