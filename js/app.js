@@ -1,6 +1,6 @@
-particlesJS.load("particles-js", "./assets/particles.json", function () {
+/*particlesJS.load("particles-js", "./assets/particles.json", function () {
   console.log("callback - particles.js config loaded");
-});
+});*/
 
 const generateTargetFunction = (number, end) => {
   return `
@@ -71,6 +71,7 @@ const deleteGraph = () => {
 };
 
 const checkForm = () => {
+
   // Verificar si todos los campos del primer formulario están diligenciados
   if ($("#method-form")[0].checkValidity()) {
     // Mostrar el segundo formulario
@@ -127,12 +128,15 @@ const checkRowWidth = () => {
 };
 
 const createTargetForm = () => {
+  
   reloadSystem();
+  console.log("si llego");
   let variablesValue = $("#variables").val();
   let restrictionsValue = $("#restrictions").val();
   let methodValue = $("#method-form").val();
 
   let variablesString = [];
+ 
 
   $("#target-variables").html(`
     <div class="col-auto">
@@ -168,8 +172,9 @@ const createTargetForm = () => {
 };
 
 const reloadSystem = () => {
-  $("#target-form").show();
-  $(".datatable").DataTable().destroy();
+  
+  $("#target-form").show();  
+  $(".datatable").DataTable().destroy(); 
   $("#iterations-container").empty();
   $("#iterations-container").hide();
   $("#calculateButton").prop("disabled", false);
