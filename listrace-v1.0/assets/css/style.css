@@ -1103,5 +1103,8 @@ hr {
     display: inline-block;
     width: auto;
   }
+  #graph-label {
+    color: #F06C6C; 
+}
 
 /*========================Thank you=================

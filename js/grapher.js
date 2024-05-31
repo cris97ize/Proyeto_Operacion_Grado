@@ -113,8 +113,8 @@ function graphCanvas() {
   // Crear un nuevo canvas
   const newCanvas = document.createElement("canvas");
   newCanvas.id = "graphCanvas";
-  newCanvas.width = 700;
-  newCanvas.height = 400;
+  newCanvas.width = 800;
+  newCanvas.height = 500;
 
   parentContainer.appendChild(newCanvas);
   const ctx = newCanvas.getContext("2d");
@@ -202,9 +202,9 @@ function graphCanvas() {
     datasets.push({
       data: [{ x: options[0].x, y: options[0].y }],
       label: "Solución",
-      borderColor: "green",
+      borderColor: "#8E44AD",
       borderWidth: 2,
-      pointBackgroundColor: "green",
+      pointBackgroundColor: "#8E44AD",
       pointRadius: 5,
     });
   }
@@ -232,9 +232,9 @@ function graphCanvas() {
   datasets.push({
     data: interseccionesValidas,
     label: "Intersecciones",
-    borderColor: "red",
+    borderColor: "blue",
     borderWidth: 2,
-    pointBackgroundColor: "red",
+    pointBackgroundColor: "blue",
     pointRadius: 5,
   });
 
@@ -266,10 +266,10 @@ function graphCanvas() {
       <label
         for="funcion"
         class="col-sm-auto col-form-label text-end fw-bold variables-label"
-        style="font-size: 16px"
+        style="font-size: 18px"
         >${
           options[0]
-            ? `X1 = ${options[0].x}, X2 = ${options[0].y}, Z = ${options[0].result}`
+            ? `X1 = ${options[0].x},X2 = ${options[0].y}, Z = ${options[0].result}`
             : "NO SE ENCUENTRA SOLUCIÓN"
         }</label
       >
