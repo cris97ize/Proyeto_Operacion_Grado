@@ -1072,5 +1072,36 @@ hr {
         margin-bottom: 20px;
     }
 }
+/* Asegurando que el contenedor principal tenga suficiente espacio */
+.target-container {
+    width: 100%;
+  }
+  
+  /* Alineando los elementos de la función */
+  #target-variables {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #target-variables .col-auto {
+    display: center;
+    align-items: center;
+  }
+  
+  #target-variables label {
+    margin-right: 30px;
+  }
+  
+  /* Ajustando el margen de los inputs dentro del contenedor de variables */
+  #target-variables input {
+    margin: 0 5px;
+  }
+  
+  /* Ajustes generales para elementos de formulario */
+  .form-control-inline {
+    display: inline-block;
+    width: auto;
+  }
 
 /*========================Thank you=================
