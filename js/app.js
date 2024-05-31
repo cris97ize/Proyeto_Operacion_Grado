@@ -139,7 +139,7 @@ const createTargetForm = () => {
  
 
   $("#target-variables").html(`
-    <div class="col-auto">
+    <div class="col-auto ">
       <label for="funcion" class="col-sm-auto col-form-label text-end">Función:</label>
     </div>
   `);
@@ -174,7 +174,7 @@ const createTargetForm = () => {
 const reloadSystem = () => {
   
   $("#target-form").show();  
-  //$(".datatable").DataTable().destroy();  esto es quiza importante, si falla descomentarear, pero asume que quiza no funcione
+  //$(".datatable").DataTable().destroy();//  esto es quiza importante, si falla descomentarear, pero asume que quiza no funcione
   $("#iterations-container").empty();
   $("#iterations-container").hide();
   $("#calculateButton").prop("disabled", false);
