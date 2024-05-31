@@ -88,18 +88,7 @@ const checkForm = () => {
   }
 };
 
-const credits = () => {
-  swal(
-    "Autores OptiGrapher",
-    `
-      Daniel Felipe Rodriguez Hernandez - 20171578079
-      Brayan Steban Cantor Munevar - 20191578017
-      Carlos Alberto Rubiano Olaya - 20191578019
-      Daniel Andres Ravelo Rivera - 20191578005
-    `,
-    "success"
-  );
-};
+
 
 const movement = () => {
   let finalElement = $("body");
