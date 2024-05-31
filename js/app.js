@@ -174,7 +174,7 @@ const createTargetForm = () => {
 const reloadSystem = () => {
   
   $("#target-form").show();  
-  $(".datatable").DataTable().destroy(); 
+  //$(".datatable").DataTable().destroy();  esto es quiza importante, si falla descomentarear, pero asume que quiza no funcione
   $("#iterations-container").empty();
   $("#iterations-container").hide();
   $("#calculateButton").prop("disabled", false);

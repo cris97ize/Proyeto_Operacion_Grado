@@ -140,11 +140,31 @@ hr {
   border: 1px solid var(--primary-color);
   opacity: 1 !important;
 }
-
+.appsLand-btn:hover, .appsLand-btn:focus, .appsLand-btn:active {
+  text-decoration: none;
+  outline: none;
+}
+.appsLand-btn:hover {
+  box-shadow:0 5px 10px rgba(71,71,71,.4);
+  background: #f43032;
+}
 .btn {
-  background-color: var(--primary-color) !important;
-  color: #fff !important;
-  max-width: 150px !important;
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  background-color: #FF5733; /* Primary blue color */
+  border: none;
+  border-radius: 4px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #FF380E; /* Darker blue for hover effect */
 }
 
 table {

@@ -65,6 +65,8 @@
         <link rel="stylesheet" href="assets/css/responsive.css">
 
 		    <!-- Enlaces a las bibliotecas de Bootstrap 5 y jQuery -->
+			<link href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0/css/bootstrap.min.css" rel="stylesheet">
+
 			<link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css" />
 			<link rel="stylesheet" href="style.css" />
 			<link href="../lib/datatables/datatables.min.css" rel="stylesheet" />
@@ -215,7 +217,7 @@
 		<!--list-topics end-->
 
 		<!--works start -->
-		<center>
+		<center> 
 			<form id="target-form" style="display: none">
 				<div class="container p-0 parameters-container">
 				  <div class="mb-3 row d-flex justify-content-center">
@@ -242,7 +244,7 @@
 					  >
 						<div class="col-auto">
 						  <label for="funcion" class="col-sm-auto col-form-label text-end"
-							>Función:</label
+							>Función  : 	</label
 						  >
 						</div>
 					  </div>
@@ -284,8 +286,21 @@
 				  </div>
 				</form>
 		
+				<div id="canvas-container" class="container" style="display: none">
+					<div id="canvas-row-container" class="row justify-content-center">
+					  <canvas id="graphCanvas" style="width: 700px; height: 500px"></canvas>
+					</div>
+					<div id="graph-label" class="row justify-content-center"></div>
+				  </div>
+			  
+				  <div
+					id="iterations-container"
+					class="container"
+					style="display: none"
+				  ></div>
+				
 		</section><!--/.works-->
-	</center>
+	</center> 
 		<!--works end -->
 
 	
