@@ -2,10 +2,7 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>Two Phases</title>
     <!-- Enlaces a las bibliotecas de Bootstrap 5 y jQuery -->
     <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css" />
@@ -22,8 +19,29 @@
     <script src="./js/logic.js"></script>
     <script src="./js/app.js"></script>
     <script src="./js/grapher.js"></script>
+    <style>
+      .align-left {
+        text-align: left;
+      }
+      .form-label {
+        margin-bottom: 0.5rem;
+      }
+      .form-control,
+      .form-select {
+        max-width: 200px;
+      }
+      .row-container {
+        display: flex;
+        flex-wrap: nowrap;
+      }
+      .method-container, .target-container {
+        flex: 1;
+        margin: 0 10px;
+      }
+    </style>
   </head>
   <body>
+    <div class="container"></div>
     <div id="particles-js"></div>
 
     <div id="loading-overlay">
@@ -31,144 +49,97 @@
       <p>Cargando...</p>
     </div>
 
-    <header class="container-fluid">
-      <h1 class="text-center">OptiGrapher</h1>
+    <header class="header">
+      <div class="container container-lg">
+        <div class="row row-top">
+          <nav class="navbar navbar-expand-lg bg-dark">
+            <a class="nav-link active" href="#">  
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR90td4awZ2iYFyEOLIeZBL_tJ1g9Xnw8zngA&s" alt="logo" class="logo-main entered lazyloaded" data-lazy-src="/wp-content/themes/nutresa/dist/assets/images/logo.svg?ver=d113b5d1" data-ll-status="loaded">
+            </a>
+          </nav>
+        </div>
+      </div>
     </header>
 
-    <form id="method-form">
-      <div class="container method-container mt-0">
-        <hr />
-        <div class="mb-3 row d-flex justify-content-center">
-          <label for="metodo" class="col-sm-auto col-form-label text-end"
-            >Método:</label
-          >
-          <div class="col-auto">
-            <select
-              class="form-select"
-              id="method-select"
-              name="method"
-              style="max-width: 200px"
-              required
-            >
-              <option value="0" selected>Two Phases</option>
-              <option value="1">Grapher</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="mb-3 row justify-content-center">
-          <label for="num-decision" class="col-sm-auto col-form-label text-end"
-            >Número de Variables de Decisión:</label
-          >
-          <div class="col-auto">
-            <input
-              type="number"
-              class="form-control"
-              id="variables"
-              name="variables"
-              style="width: 90px"
-              required
-            />
-          </div>
-        </div>
-
-        <div class="mb-3 row justify-content-center">
-          <label
-            for="num-restricciones"
-            class="col-sm-auto col-form-label text-end"
-            >Número de Restricciones:</label
-          >
-          <div class="col-auto">
-            <input
-              type="number"
-              class="form-control"
-              id="restrictions"
-              name="restrictions"
-              style="width: 90px"
-              required
-            />
-          </div>
-        </div>
-
-        <div class="mb-3 row justify-content-center">
-          <button type="button" class="btn" onclick="checkForm()">
-            Proyectar
-          </button>
-        </div>
-      </div>
-      <div class="d-flex justify-content-center px-5">
-        <hr class="w-100" />
-      </div>
-    </form>
-
-    <form id="target-form" style="display: none">
-      <div class="container p-0 parameters-container">
-        <div class="mb-3 row d-flex justify-content-center">
-          <label for="objetivo" class="col-sm-auto col-form-label text-end"
-            >Objetivo:</label
-          >
-          <div class="col-auto">
-            <select
-              class="form-select"
-              id="natureSystem"
-              style="max-width: 200px"
-            >
-              <option value="0">Minimizar</option>
-              <option value="1">Maximizar</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="row justify-content-center pt-2">
-          <div class="target-container">
-            <div
-              id="target-variables"
-              class="mb-3 row elastic-row elastic-group-row flex-nowrap"
-            >
+    <div class="container">
+      <div class="row-container">
+        <form id="method-form" class="method-container">
+          <div>
+            <div class="mb-3 row">
+              <label for="metodo" class="col-form-label align-left">Método:</label>
               <div class="col-auto">
-                <label for="funcion" class="col-sm-auto col-form-label text-end"
-                  >Función:</label
-                >
+                <select class="form-select" id="method-select" name="method" required>
+                  <option value="0" selected>Dos Fases</option>
+                  <option value="1">Metodo Grafico</option>
+                </select>
               </div>
             </div>
-            <div class="mb-3 row justify-content-center">
-              <div class="col-auto py-0 px-2">
-                <label
-                  for="funcion"
-                  class="col-sm-auto col-form-label text-end"
-                  style="font-size: 16px"
-                  >Restricciones:</label
-                >
+
+            <div class="mb-3 row">
+              <label for="num-decision" class="col-form-label align-left">Número de Variables de Decisión:</label>
+              <div class="col-auto">
+                <input type="number" class="form-control" id="variables" name="variables" required />
               </div>
             </div>
-            <div id="target-restrictions" class="elastic-group-row"></div>
-            <div class="mb-3 row justify-content-center">
-              <div class="col-auto py-0 px-2">
-                <label
-                  id="variable-label"
-                  for="funcion"
-                  class="col-sm-auto col-form-label text-end"
-                ></label>
+
+            <div class="mb-3 row">
+              <label for="num-restricciones" class="col-form-label align-left">Número de Restricciones:</label>
+              <div class="col-auto">
+                <input type="number" class="form-control" id="restrictions" name="restrictions" required />
               </div>
+            </div>
+
+            <div class="mb-3 row">
+              <button type="button" class="btn" onclick="checkForm()">
+                <span class="btn-txt">Proyectar</span>
+              </button>
             </div>
           </div>
-        </div>
-        <div class="mb-3 row justify-content-center">
-          <button
-            id="calculateButton"
-            type="button"
-            class="btn"
-            onclick="calculate()"
-          >
-            Calcular
-          </button>
-        </div>
-      </div>
+        </form>
 
-      <div class="d-flex justify-content-center px-5">
-        <hr class="w-100" />
+        <form id="target-form" class="target-container" style="display: none">
+          <div class="p-0 parameters-container">
+            <div class="mb-3 row">
+              <label for="objetivo" class="col-form-label align-left">Objetivo:</label>
+              <div class="col-auto">
+                <select class="form-select" id="natureSystem">
+                  <option value="0">Minimizar</option>
+                  <option value="1">Maximizar</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="row pt-2">
+              <div>
+                <div id="target-variables" class="mb-3 row elastic-row elastic-group-row flex-nowrap">
+                  <div class="col-auto">
+                    <label for="funcion" class="col-form-label align-left">Función:</label>
+                  </div>
+                </div>
+                <div class="mb-3 row">
+                  <div class="col-auto py-0 px-2">
+                    <label for="funcion" class="col-form-label align-left" style="font-size: 16px">Restricciones:</label>
+                  </div>
+                </div>
+                <div id="target-restrictions" class="elastic-group-row"></div>
+                <div class="mb-3 row">
+                  <div class="col-auto py-0 px-2">
+                    <label id="variable-label" for="funcion" class="col-form-label align-left"></label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="mb-3 row">
+              <button id="calculateButton" type="button" class="btn" onclick="calculate()">
+                <span class="btn-txt">Calcular</span>
+              </button>
+            </div>
+          </div>
+
+
+        </form>
       </div>
-    </form>
+    </div>
 
     <div id="canvas-container" class="container" style="display: none">
       <div id="canvas-row-container" class="row justify-content-center">
@@ -177,16 +148,9 @@
       <div id="graph-label" class="row justify-content-center"></div>
     </div>
 
-    <div
-      id="iterations-container"
-      class="container"
-      style="display: none"
-    ></div>
+    <div id="iterations-container" class="container" style="display: none"></div>
 
-    <div class="container">
-      <div class="row justify-content-end">
-        <button type="button" class="btn" onclick="credits()">Créditos</button>
-      </div>
-    </div>
+    
   </body>
 </html>
+
