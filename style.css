@@ -3,7 +3,11 @@
   --background-color: #eeeaea;
   --header-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
-
+.navbar {
+  background-color: #151616;
+  padding: 10px 20px; /* Ajusta el relleno según sea necesario */
+  /* Agrega otros estilos según lo necesites */
+}
 
 
 ::-webkit-scrollbar-track:horizontal {
@@ -13,13 +17,13 @@
 
 /* Handle */
 ::-webkit-scrollbar-thumb:horizontal {
-  background-color: var(--shadow-color);
+  background-color: var(--shadow-color);  
   border-radius: 8px;
 }
 
 /* Corner */
 ::-webkit-scrollbar-corner:horizontal {
-  background-color: #eee7e7;
+  background-color: #d4d1d1;
 }
 
 ::-webkit-scrollbar {
@@ -47,11 +51,10 @@ input[type="number"] {
 
 body {
   overflow-y: scroll;
-  font-family: "Aleo", sans-serif;
+  font-family: 'Segoe UI', Tahoma;
+  background-color: #bebebe; /* Color de fondo para la parte trasera de los formularios */
   height: 100vh;
-  background-size: cover; /* Esto ajustará la imagen para cubrir todo el contenedor */
-  background-position: center; /* Esto centrará la imagen */
-  background-repeat: no-repeat; /* Esto evita que la imagen se repita */
+
 }
 
 #particles-js {
@@ -63,20 +66,10 @@ body {
   z-index: -1; /* Asigna un z-index inferior al div de contenido */
 }
 
-header {
-  height: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--primary-color);
-  color: #fff;
-  padding: 20px;
-  box-shadow: var(--header-shadow);
-}
-
 h1 {
   font-size: 40px;
   margin: 0; /* Elimina el margen predeterminado del h1 */
+  
 }
 
 .method-container {
@@ -113,10 +106,7 @@ h1 {
   width: 80px;
 }
 
-hr {
-  border: 1px solid var(--primary-color);
-  opacity: 1 !important;
-}
+
 .appsLand-btn:hover, .appsLand-btn:focus, .appsLand-btn:active {
   text-decoration: none;
   outline: none;
@@ -220,8 +210,6 @@ table.dataTable {
   color: rgb(245, 244, 244);
 }
 
-
-
 .btn {
   height: 50px;
   width: 200px;
@@ -232,10 +220,14 @@ table.dataTable {
   overflow: hidden;
   border-radius: 30px;
   color: #333;
+  font-size: 16px;
+  font-weight: 800;
   transition: all 0.5s ease-in-out;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra inicial */
 }
 
 .btn-txt {
+  position: relative;
   z-index: 1;
   font-weight: 800;
   letter-spacing: 4px;
@@ -244,26 +236,35 @@ table.dataTable {
 .btn-txt::after {
   content: "";
   position: absolute;
-  left: 0;
-  top: 0;
-  transition: all 0.5s ease-in-out;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.5s ease-in-out, background-color 0.5s ease-in-out;
   background-color: #333;
   border-radius: 30px;
-  visibility: hidden;
-  height: 10px;
-  width: 10px;
+  height: 200%;
+  width: 200%;
   z-index: -1;
 }
 
 .btn:hover {
-  box-shadow: 1px 1px 200px #252525;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
   color: #fff;
-  border: none;
+  border: 2px solid transparent; /* Hacer el borde transparente en hover */
 }
 
-.btn-txt:hover::after {
-  visibility: visible;
-  transform: scale(100) translateX(2px);
+.btn:hover .btn-txt::after {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.btn:active {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra menos pronunciada en click */
+  transform: translateY(2px); /* Efecto de presión */
+}
+
+.btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(37, 37, 37, 0.2); /* Sombra de foco */
 }
 
 .logo-main {
@@ -271,3 +272,27 @@ table.dataTable {
   height: auto; /* Esto mantendrá la proporción de la imagen */
 }
 
+.container {
+  background-color: #e0e0e0; /* Color pastel para el contenedor principal */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra del contenedor */
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.row-container {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+}
+
+.method-container, .target-container {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra de los formularios */
+  flex: 1;
+}

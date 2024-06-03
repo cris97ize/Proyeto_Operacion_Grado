@@ -41,29 +41,25 @@
     </style>
   </head>
   <body>
-    <div class="container"></div>
-    <div id="particles-js"></div>
-
     <div id="loading-overlay">
       <div id="loading-indicator"></div>
       <p>Cargando...</p>
     </div>
 
-    <header class="header">
-      <div class="container container-lg">
-        <div class="row row-top">
-          <nav class="navbar navbar-expand-lg bg-dark">
-            <a class="nav-link active" href="#">  
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR90td4awZ2iYFyEOLIeZBL_tJ1g9Xnw8zngA&s" alt="logo" class="logo-main entered lazyloaded" data-lazy-src="/wp-content/themes/nutresa/dist/assets/images/logo.svg?ver=d113b5d1" data-ll-status="loaded">
-            </a>
-          </nav>
-        </div>
-      </div>
-    </header>
+
+  <header class="header">  
+  <nav class="navbar navbar-expand-sm">
+      <img src="images/ud.png" style="width:6%; padding-right: 1%;">
+      <a class="navbar-brand" style="color: #fff">  Proyecto Final - Inv.Operaciones</a>
+  </nav>
+  </header>
+  <hr>
 
     <div class="container">
       <div class="row-container">
-        <form id="method-form" class="method-container">
+        <!-----  FORMULARIO  DE TOMA DE DATOS ------>
+        <form id="method-form" class="method-container" >
+          <p>Escoja el metodo que desea ver:</p>
           <div>
             <div class="mb-3 row">
               <label for="metodo" class="col-form-label align-left">Método:</label>
@@ -135,22 +131,45 @@
               </button>
             </div>
           </div>
-
-
         </form>
       </div>
     </div>
 
     <div id="canvas-container" class="container" style="display: none">
+
       <div id="canvas-row-container" class="row justify-content-center">
         <canvas id="graphCanvas" style="width: 700px; height: 500px"></canvas>
       </div>
       <div id="graph-label" class="row justify-content-center"></div>
     </div>
-
+    <hr>
     <div id="iterations-container" class="container" style="display: none"></div>
-
-    
+    <footer class="footer">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-5">
+                  <h4>Integrantes:</h4>
+                  <ul>
+                      <li>Fernando  cod: </li>
+                      <li>Cristian cod:</li>
+                      <li>Catalina Laiton cod: </li>
+                      <li>Michael Hernández cod: 20202578071</li>
+                  </ul>
+              </div>
+              <div class="col-md-6">
+                  <h4>Universidad Distrital Francisco José de Caldas</h4>
+                  <p> Investigación de Operaciones</p>
+                  <p> Sistematización de datos</p>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-md-12 text-center">
+                  <p>&copy; 2024 Todos los derechos reservados.</p>
+              </div>
+          </div>
+      </div>
+  </footer>
+  
   </body>
 </html>
 
