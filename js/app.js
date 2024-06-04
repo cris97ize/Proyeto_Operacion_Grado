@@ -173,12 +173,14 @@ const calculate = async () => {
   $(".datatable").DataTable().destroy();
   $("#iterations-container").empty();
   $("#iterations-container").hide();
-  var audio = document.getElementById("myAudio");
-  audio.play();
-
+ 
   let methodValue = $("#method-select").val();
   console.log(methodValue);
   if (methodValue == "0") {
+    var audio = document.getElementById("myAudio");
+    audio.volume = 0.08; // Ajusta el volumen a la mitad
+    audio.play();
+  
     natureSystem = 0; // Minimización 0 | Maximización 1
     target = [];
     natures = []; // > 0 | < 1 | = 2
