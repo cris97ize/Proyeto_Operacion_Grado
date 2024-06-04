@@ -173,6 +173,8 @@ const calculate = async () => {
   $(".datatable").DataTable().destroy();
   $("#iterations-container").empty();
   $("#iterations-container").hide();
+  var audio = document.getElementById("myAudio");
+  audio.play();
 
   let methodValue = $("#method-select").val();
   console.log(methodValue);
