@@ -1,8 +1,4 @@
-:root {
-  --primary-color: #1d060b;
-  --background-color: #eeeaea;
-  --header-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
+
 .navbar {
   background-color: #151616;
   padding: 10px 20px; /* Ajusta el relleno según sea necesario */
@@ -116,57 +112,7 @@ h1 {
   background: #f43032;
 }
 
-/*
-table {
-  border: 2px solid #e02f56;
-  padding: 3px;
-}
 
-table td {
-  border: 1px solid #fff; 
-  padding: 5px;
-  text-align: center;
-}
-
-table.dataTable {
-  margin: 0 auto;
-}
-
-.cell-style-1 {
-  background-color: var(--primary-color);
-  color: #fff;
-}
-
-.cell-style-2 {
-  background-color: var(--secondary-color);
-  color: #fff;
-}
-
-.cell-style-3 {
-  background-color: var(--primary-color);
-  color: #fff;
-  text-align: right !important;
-  padding-right: 20px;
-  border-bottom: none !important;
-}
-
-.cell-style-4 {
-  background-color: var(--primary-color);
-  color: #fff;
-  text-align: left !important;
-  padding-left: 20px;
-  border-top: none !important;
-}
-
-.cell-style-5 {
-  background-color: var(--third-color);
-  color: #fff;
-}
-
-.cell-style-6 {
-  background-color: var(--fourth-color);
-  color: #fff;
-}*/
 
 #loading-overlay {
   display: none;
@@ -207,8 +153,6 @@ table.dataTable {
 
 .phase-title {
   padding: 10px 0px;
-  background-color: var(--primary-color);
-  color: rgb(245, 244, 244);
 }
 
 .btn {
@@ -297,3 +241,62 @@ table.dataTable {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra de los formularios */
   flex: 1;
 }
+
+
+.inputbox {
+  position: relative;
+  width: 300px;  /* Ajusta este valor para hacer el contenedor lo suficientemente ancho */
+}
+
+.inputbox input {
+  position: relative;
+  width: 100%;
+  padding: 20px 10px 10px;
+  background: transparent;
+  outline: none;
+  box-shadow: none;
+  border: none;
+  color: #ffffff;  /* Cambiado a blanco */
+  font-size: 1em;
+  letter-spacing: 0.05em;
+  transition: 0.5s;
+  z-index: 10;
+}
+
+.inputbox span {
+  position: absolute;
+  left: 0;
+  padding: 0 10px;  /* Ajusta el padding para que el texto no se desborde */
+  font-size: 1em;
+  color: #c3c2cf;
+  letter-spacing: 0.05em;
+  transition: 0.5s;
+  pointer-events: none;
+  white-space: nowrap;  /* Evita el salto de línea */
+}
+
+.inputbox input:valid ~ span,
+.inputbox input:focus ~ span {
+  color: #000000;
+  transform: translateX(-10px) translateY(-34px);
+  font-size: 0.75em;
+}
+
+.inputbox i {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: #6b6a79;
+  border-radius: 4px;
+  transition: 0.5s;
+  pointer-events: none;
+  z-index: 9;
+}
+
+.inputbox input:valid ~ i,
+.inputbox input:focus ~ i {
+  height: 44px;
+}
+

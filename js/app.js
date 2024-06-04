@@ -211,8 +211,8 @@ const calculate = async () => {
 
     $("#iterations-container").append(` 
       <div class="row justify-content-center">
-        <div class="mb-3 row justify-content-center phase-title" style="background-color: #757575">
-          <h1 class="text-center">Primera Fase</h1>
+        <div class="mb-3 row justify-content-center phase-title">
+          <h1 >Fase 1</h1>
         </div>
       </div>`);
 
@@ -229,8 +229,8 @@ const calculate = async () => {
       if (!redos[i].candidate && i < redos.length - 1) {
         $("#iterations-container").append(` 
         <div class="row justify-content-center">
-          <div class="mb-3 row justify-content-center phase-title"  style="background-color: #757575">
-            <h1 class="text-center">Segunda Fase</h1>
+          <div class="mb-3 row justify-content-center phase-title">
+            <h1 >Fase 2</h1>
           </div>
         </div>`);
       }
@@ -442,8 +442,8 @@ const initializeTable = async (data, index) => {
       });
 
       $("#iterations-container").append(`
-      <div class="row justify-content-center">
-        <div class="mb-3 row justify-content-center">
+      <div class="row ">
+        <div class="mb-3 ">
           <div class="col-auto py-0 px-2">
             <label
               for="funcion"

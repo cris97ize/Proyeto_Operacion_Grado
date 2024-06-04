@@ -87,6 +87,11 @@
             <a class="nav-link active" href="#">  
               <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR90td4awZ2iYFyEOLIeZBL_tJ1g9Xnw8zngA&s" alt="logo" class="logo-main entered lazyloaded" data-lazy-src="/wp-content/themes/nutresa/dist/assets/images/logo.svg?ver=d113b5d1" data-ll-status="loaded">
             </a>
+            <div class="container-fluid">
+              <a class="nav-link active" href="#">
+               <font color="#FFFFF"><h1>Proyecto Gráfico</h1></font>
+             </a>
+            </div>
           </nav>
         </div>
       </div>
@@ -97,7 +102,8 @@
         <form id="method-form" class="method-container">
           <div>
             <div class="mb-3 row">
-              <label for="metodo" class="col-form-label align-left">Método:</label>
+              <label for="metodo" class="col-form-label align-left"><strong>Método</strong></label>
+
               <div class="col-auto">
                 <select class="form-select" id="method-select" name="method" required>
                   <option value="0" selected>Dos Fases</option>
@@ -106,21 +112,20 @@
               </div>
             </div>
 
-            <div class="mb-3 row">
-              <label for="num-decision" class="col-form-label align-left">Número de Variables de Decisión:</label>
-              <div class="col-auto">
-                <input type="number" class="form-control" id="variables" name="variables" required />
-              </div>
+            <div class="inputbox" style="margin-top: 50px;">
+              <input type="number" id="variables" name="variables" required>
+              <span>Número de Variables de Decisión:</span>
+              <i></i>
+            </div>
+            
+            <div class="inputbox" style="margin-top: 50px;">
+              <input type="number" id="restrictions" name="restrictions" required>
+              <span>Número de Restricciones:</span>
+              <i></i>
             </div>
 
-            <div class="mb-3 row">
-              <label for="num-restricciones" class="col-form-label align-left">Número de Restricciones:</label>
-              <div class="col-auto">
-                <input type="number" class="form-control" id="restrictions" name="restrictions" required />
-              </div>
-            </div>
 
-            <div class="mb-3 row">
+            <div class="mb-3 row" style="margin-top: 50px;">
               <button type="button" class="btn" onclick="checkForm()">
                 <span class="btn-txt">Proyectar</span>
               </button>
@@ -131,9 +136,9 @@
         <form id="target-form" class="target-container" style="display: none">
           <div class="p-0 parameters-container">
             <div class="mb-3 row">
-              <label for="objetivo" class="col-form-label align-left">Objetivo:</label>
-              <div class="col-auto">
-                <select class="form-select" id="natureSystem">
+             
+              <div class="col-auto text-center">
+                <select class="form-select" id="natureSystem" >
                   <option value="0">Minimizar</option>
                   <option value="1">Maximizar</option>
                 </select>
@@ -184,16 +189,16 @@
               <div class="col-md-5">
                   <h4>Integrantes:</h4>
                   <ul>
-                      <li>Fernando  cod: </li>
-                      <li>Cristian cod:</li>
-                      <li>Catalina Laiton cod: </li>
-                      <li>Michael Hernández cod: 20202578071</li>
-                  </ul>
+                    <li><strong>Fernando Rivera cod:20182578064</strong></li>
+                    <li><strong>Cristian López cod:20182578095</strong></li>
+                    <li><strong>Catalina Laiton cod: 20202578127</strong></li>
+                    <li><strong>Michael Hernández cod: 20202578071</strong></li>
+                </ul>
               </div>
-              <div class="col-md-6">
+              <div class="col-md-6 text-center">
                   <h4>Universidad Distrital Francisco José de Caldas</h4>
                   <p> Investigación de Operaciones</p>
-                  <p> Sistematización de datos</p>
+                  <p> Tecnologia en Sistematización de datos</p>
               </div>
           </div>
           <div class="row">
