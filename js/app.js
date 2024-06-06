@@ -178,7 +178,7 @@ const calculate = async () => {
   console.log(methodValue);
   if (methodValue == "0") {
     var audio = document.getElementById("myAudio");
-    audio.volume = 0.6; // Ajusta el volumen a la mitad
+    audio.volume = 2; // Ajusta el volumen a la mitad
     audio.play();
   
     natureSystem = 0; // Minimización 0 | Maximización 1
